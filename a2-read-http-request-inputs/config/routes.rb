@@ -18,4 +18,7 @@ Rails.application.routes.draw do
   # This mapping is optional '/profile' mapping will read the given request parameters
   get "/profile/:user/:passwd", to: "homepage#show"
 
+  # Defining default parameters
+  get "/photos/:id", to: "homepage#photos", defaults: { app: 'abc123' }
+
 end

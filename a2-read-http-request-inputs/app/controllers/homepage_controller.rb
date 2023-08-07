@@ -10,4 +10,13 @@ class HomepageController < ApplicationController
             @username = params[:user]
             @password = params[:passwd]
         end
+
+
+        def photos
+            # read id and default param
+            @photoId = params[:id]
+            @app = params[:app]
+        end
+
 end
+
