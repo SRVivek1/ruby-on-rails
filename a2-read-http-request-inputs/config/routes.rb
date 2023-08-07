@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   # Here ':user' is a request parameter URL eg. '.../home?user=vivek'
   get "/home/:user", to: "homepage#index"
 
-  # Shorthand form of URL mapping
+  # Received multiple request parameters
   get "/profile", to: "homepage#show"
   get "/profile/:user/:passwd", to: "homepage#show"
 
