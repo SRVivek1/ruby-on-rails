@@ -19,28 +19,8 @@ Things you may want to cover:
     --> Install on local machine
 
 * Step-3: configure DB connection details in config/database.yml
-        default: &default
-            adapter: mysql2
-            pool: 5
-            timeout: 5000
-            username: viveksingh
-            password: ----replace-with-db-password----
-
-        development:
-            <<: *default
-            database: devdb
-
-        # Warning: The database defined as "test" will be erased and
-        # re-generated from your development database when you run "rake".
-        # Do not set this db to the same as development or production.
-        test:
-            <<: *default
-            database: devdb
-
-        production:
-            <<: *default
-            database: devdb
-
+      --> Check 'config/database.yml' for details
+  
 * Step-4: Install 'mysql2' gem
     -->  gem install mysql2 --platform=ruby -- --with-mysql-dir="D:\....\mysql-connector-c++-8.1.0-winx64"
 
@@ -52,14 +32,12 @@ Things you may want to cover:
         -->> Check for sqlite3, it's default DB for ruby-rails
     --> Then execute command 'bundle install' to add the gem to project.
     
-
-
 * Step-6: Create a model to connect to database table.
     --> ruby bin\rails g model Customer cust_id:integer name:string mobile:integer
 
 
 * Step-5: Run 'db:migrate' to execute generate migration script to create table in database
-    --> ruby bin\rails db:migrate
+     --> ruby bin\rails db:migrate
     --> Output
     ------------
         == 20230808063434 CreateCustomers: migrating ==================================
