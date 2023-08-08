@@ -1,2 +1,12 @@
 <h1>Greeting#index</h1>
+<h2> User : <%= @username %></h2>
+<br/>
+
+<% 
+    # Generates link on webpage to specified record, but using '.' to concatenate the path and variable.
+    # TODO fix the path generation. Generated as - http://127.0.0.1:3000/greet.vivek 
+    # instead of  - http://127.0.0.1:3000/greet/vivek
+%>
+<%= link_to "Greet", greet_path(@username) %>
+
 <p>Find me in app/views/greeting/index.html.erb</p>
