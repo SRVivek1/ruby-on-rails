@@ -23,7 +23,7 @@ Things you may want to cover:
   
 * ## Step-4: Install 'mysql2' gem <br>
     * gem install mysql2 --platform=ruby -- --with-mysql-dir="D:\....\mysql-connector-c++-8.1.0-winx64" <br>
-
+    * Note: Based in access rights to installation directory you may need to run this command as 'Administrator'.
 
 * ## Step 5: Add MySQL gem in your project bundle <br>
     * Update 'GemFile' and add the below statement <br>
