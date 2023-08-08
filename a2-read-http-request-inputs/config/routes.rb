@@ -9,7 +9,16 @@ Rails.application.routes.draw do
   get "/home", to: "homepage#index"
   
   # Here ':user' is a request parameter URL eg. '.../home?user=vivek'
+  # This is optional
   get "/home/:user", to: "homepage#index"
 
+  # Received multiple request parameters
+  get "/profile", to: "homepage#show"
+
+  # This mapping is optional '/profile' mapping will read the given request parameters
+  get "/profile/:user/:passwd", to: "homepage#show"
+
+  # Defining default parameters
+  get "/photos/:id", to: "homepage#photos", defaults: { app: 'abc123' }
 
 end
