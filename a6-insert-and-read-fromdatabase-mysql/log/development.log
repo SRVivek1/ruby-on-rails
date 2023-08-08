@@ -1,0 +1,854 @@
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT GET_LOCK('2901669337233075780', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateCustomers (20230808083559)
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE TABLE `customers` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `cust_id` int, `name` varchar(255), `mobile` int, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT RELEASE_LOCK('2901669337233075780')[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mCustomer Load (1.5ms)[0m  [1m[34mSELECT `customers`.* FROM `customers`[0m
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Create (1.9ms)[0m  [1m[32mINSERT INTO `customers` (`cust_id`, `name`, `mobile`, `email`, `created_at`, `updated_at`) VALUES (101, 'Vivek', 1234, 'vivek@test.com', '2023-08-08 08:59:48.939711', '2023-08-08 08:59:48.939711')[0m
+  [1m[36mTRANSACTION (56.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Create (1.3ms)[0m  [1m[32mINSERT INTO `customers` (`cust_id`, `name`, `mobile`, `email`, `created_at`, `updated_at`) VALUES (101, 'Ravi', 1234, 'ravi@test.com', '2023-08-08 09:01:02.445644', '2023-08-08 09:01:02.445644')[0m
+  [1m[36mTRANSACTION (15.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Create (1.1ms)[0m  [1m[32mINSERT INTO `customers` (`cust_id`, `name`, `mobile`, `email`, `created_at`, `updated_at`) VALUES (103, 'Rakesh', 1234, 'rakeash@test.com', '2023-08-08 09:01:57.323033', '2023-08-08 09:01:57.323033')[0m
+  [1m[36mTRANSACTION (47.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mCustomer Load (0.7ms)[0m  [1m[34mSELECT `customers`.* FROM `customers`[0m
+Started GET "/" for 127.0.0.1 at 2023-08-08 14:41:01 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mCACHE ActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+You have 1 pending migration:
+
+20230808083559_create_customers.rb
+
+
+):
+  
+activerecord (7.0.6) lib/active_record/migration.rb:627:in `check_pending!'
+activerecord (7.0.6) lib/active_record/migration.rb:592:in `block (2 levels) in call'
+activesupport (7.0.6) lib/active_support/file_update_checker.rb:83:in `execute'
+activerecord (7.0.6) lib/active_record/migration.rb:597:in `block in call'
+activerecord (7.0.6) lib/active_record/migration.rb:589:in `synchronize'
+activerecord (7.0.6) lib/active_record/migration.rb:589:in `call'
+actionpack (7.0.6) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.6) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.6) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.6) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.6) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.6) lib/action_dispatch/middleware/show_exceptions.rb:29:in `call'
+railties (7.0.6) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.6) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.6) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.6) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.6) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.6) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.6) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.6) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.8) lib/rack/method_override.rb:24:in `call'
+rack (2.2.8) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.6) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.6) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.6) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.6) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.8) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.6) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.6) lib/rails/engine.rb:530:in `call'
+puma (5.6.6) lib/puma/configuration.rb:252:in `call'
+puma (5.6.6) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.6) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.6) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.6) lib/puma/server.rb:443:in `process_client'
+puma (5.6.6) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT GET_LOCK('2901669337233075780', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateCustomers (20230808083559)
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE `customers` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `cust_id` int, `name` varchar(255), `mobile` varchar(255), `email` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT RELEASE_LOCK('2901669337233075780')[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (1.3ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.8ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.9ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (71.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS `devdb`[0m
+  [1m[35m (17.9ms)[0m  [1m[35mCREATE DATABASE `devdb` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE DATABASE `devdb` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (158.5ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY)[0m
+  [1m[35m (115.2ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT GET_LOCK('2901669337233075780', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.7ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateCustomers (20230808083559)
+  [1m[35m (82.6ms)[0m  [1m[35mCREATE TABLE `customers` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `cust_id` int, `name` varchar(255), `mobile` varchar(255), `email` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20230808083559')[0m
+  [1m[36mTRANSACTION (18.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.7ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.0ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2023-08-08 09:14:32.774367', '2023-08-08 09:14:32.774367')[0m
+  [1m[36mTRANSACTION (19.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT RELEASE_LOCK('2901669337233075780')[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Create (1.7ms)[0m  [1m[32mINSERT INTO `customers` (`cust_id`, `name`, `mobile`, `email`, `created_at`, `updated_at`) VALUES (101, 'vivek', '1234', 'vivek@t.com', '2023-08-08 09:18:14.975078', '2023-08-08 09:18:14.975078')[0m
+  [1m[36mTRANSACTION (56.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Create (1.7ms)[0m  [1m[32mINSERT INTO `customers` (`cust_id`, `name`, `mobile`, `email`, `created_at`, `updated_at`) VALUES (102, 'Rahul', '1234', 'rahul@t.com', '2023-08-08 09:18:23.717040', '2023-08-08 09:18:23.717040')[0m
+  [1m[36mTRANSACTION (24.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Create (0.9ms)[0m  [1m[32mINSERT INTO `customers` (`cust_id`, `name`, `mobile`, `email`, `created_at`, `updated_at`) VALUES (103, 'Naveen', '1234', 'naveen@t.com', '2023-08-08 09:18:50.392078', '2023-08-08 09:18:50.392078')[0m
+  [1m[36mTRANSACTION (48.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCustomer Create (0.8ms)[0m  [1m[32mINSERT INTO `customers` (`cust_id`, `name`, `mobile`, `email`, `created_at`, `updated_at`) VALUES (104, 'Kuku', '1234', 'kuku@t.com', '2023-08-08 09:19:19.428652', '2023-08-08 09:19:19.428652')[0m
+  [1m[36mTRANSACTION (14.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mCustomer Load (1.0ms)[0m  [1m[34mSELECT `customers`.* FROM `customers`[0m
+Started GET "/" for 127.0.0.1 at 2023-08-08 14:50:23 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/railties-7.0.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/railties-7.0.6/lib/rails/templates/rails/welcome/index.html.erb (Duration: 30.4ms | Allocations: 523)
+Completed 200 OK in 216ms (Views: 45.7ms | ActiveRecord: 0.0ms | Allocations: 5449)
+
+
+Started GET "/customers" for 127.0.0.1 at 2023-08-08 14:50:40 +0530
+Processing by EmployeeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering employee/index.html.erb within layouts/application
+  [1m[36mCustomer Load (1.0ms)[0m  [1m[34mSELECT `customers`.* FROM `customers`[0m
+  ↳ app/views/employee/index.html.erb:4
+  Rendered employee/index.html.erb within layouts/application (Duration: 36.1ms | Allocations: 6282)
+  Rendered layout layouts/application.html.erb (Duration: 1479.6ms | Allocations: 88705)
+Completed 500 Internal Server Error in 1506ms (ActiveRecord: 8.0ms | Allocations: 90340)
+
+
+  
+ActionView::Template::Error (Permission denied @ rb_file_s_rename - (D:/workspaces/workspace3.0/ruby-on-rails/a6-insert-and-read-fromdatabase-mysql/tmp/cache/assets/sprockets/v4.0.0/V7/V7Ra5HNLjpR46ip9kh1aiGtp395mclcQ_E1up3ELNs4.cache.21440.7308.297734, D:/workspaces/workspace3.0/ruby-on-rails/a6-insert-and-read-fromdatabase-mysql/tmp/cache/assets/sprockets/v4.0.0/V7/V7Ra5HNLjpR46ip9kh1aiGtp395mclcQ_E1up3ELNs4.cache)):
+  
+sprockets (4.2.0) lib/sprockets/path_utils.rb:362:in `rename'
+sprockets (4.2.0) lib/sprockets/path_utils.rb:362:in `atomic_write'
+sprockets (4.2.0) lib/sprockets/cache/file_store.rb:112:in `set'
+sprockets (4.2.0) lib/sprockets/cache.rb:227:in `set'
+sprockets (4.2.0) lib/sprockets/cache.rb:143:in `set'
+sprockets (4.2.0) lib/sprockets/loader.rb:263:in `store_asset'
+sprockets (4.2.0) lib/sprockets/loader.rb:226:in `load_from_unloaded'
+sprockets (4.2.0) lib/sprockets/loader.rb:59:in `block in load'
+sprockets (4.2.0) lib/sprockets/loader.rb:337:in `fetch_asset_from_dependency_cache'
+sprockets (4.2.0) lib/sprockets/loader.rb:43:in `load'
+sprockets (4.2.0) lib/sprockets/cached_environment.rb:44:in `block in load'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/map.rb:207:in `block in fetch_or_store'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/map.rb:187:in `fetch'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/map.rb:206:in `fetch_or_store'
+sprockets (4.2.0) lib/sprockets/cached_environment.rb:44:in `load'
+sprockets (4.2.0) lib/sprockets/bundle.rb:32:in `block in call'
+C:/Ruby32-x64/lib/ruby/3.2.0/set.rb:511:in `each_key'
+C:/Ruby32-x64/lib/ruby/3.2.0/set.rb:511:in `each'
+sprockets (4.2.0) lib/sprockets/bundle.rb:31:in `call'
+sprockets (4.2.0) lib/sprockets/processor_utils.rb:84:in `call_processor'
+sprockets (4.2.0) lib/sprockets/processor_utils.rb:66:in `block in call_processors'
+sprockets (4.2.0) lib/sprockets/processor_utils.rb:65:in `reverse_each'
+sprockets (4.2.0) lib/sprockets/processor_utils.rb:65:in `call_processors'
+sprockets (4.2.0) lib/sprockets/loader.rb:182:in `load_from_unloaded'
+sprockets (4.2.0) lib/sprockets/loader.rb:59:in `block in load'
+sprockets (4.2.0) lib/sprockets/loader.rb:337:in `fetch_asset_from_dependency_cache'
+sprockets (4.2.0) lib/sprockets/loader.rb:43:in `load'
+sprockets (4.2.0) lib/sprockets/cached_environment.rb:44:in `block in load'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/map.rb:207:in `block in fetch_or_store'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/map.rb:187:in `fetch'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/map.rb:206:in `fetch_or_store'
+sprockets (4.2.0) lib/sprockets/cached_environment.rb:44:in `load'
+sprockets (4.2.0) lib/sprockets/base.rb:81:in `find_asset'
+sprockets (4.2.0) lib/sprockets/base.rb:88:in `find_all_linked_assets'
+sprockets (4.2.0) lib/sprockets/manifest.rb:125:in `each'
+sprockets (4.2.0) lib/sprockets/manifest.rb:125:in `to_a'
+sprockets (4.2.0) lib/sprockets/manifest.rb:125:in `block (2 levels) in find'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/executor/safe_task_executor.rb:24:in `block in execute'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:48:in `block in synchronize'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:48:in `synchronize'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:48:in `synchronize'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/executor/safe_task_executor.rb:22:in `execute'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/promise.rb:564:in `block in realize'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:352:in `run_task'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:343:in `block (3 levels) in create_worker'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:334:in `loop'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:334:in `block (2 levels) in create_worker'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:333:in `catch'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:333:in `block in create_worker'
+Started GET "/customers" for 127.0.0.1 at 2023-08-08 14:55:43 +0530
+Processing by EmployeeController#index as HTML
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms | Allocations: 976)
+
+
+  
+NoMethodError (undefined method `get_all' for Customer:Class):
+  
+app/controllers/employee_controller.rb:6:in `index'
+Started GET "/customers" for 127.0.0.1 at 2023-08-08 14:56:17 +0530
+Processing by EmployeeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering employee/index.html.erb within layouts/application
+  [1m[36mCustomer Load (24.0ms)[0m  [1m[34mSELECT `devdb`.`customers`.* FROM `devdb`.`customers`[0m
+  ↳ app/views/employee/index.html.erb:4
+  Rendered employee/index.html.erb within layouts/application (Duration: 40.8ms | Allocations: 2769)
+  Rendered layout layouts/application.html.erb (Duration: 199.3ms | Allocations: 34000)
+Completed 200 OK in 213ms (Views: 169.4ms | ActiveRecord: 32.4ms | Allocations: 35055)
+
+
+Started GET "/customers" for 127.0.0.1 at 2023-08-08 15:00:54 +0530
+Processing by EmployeeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering employee/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.9ms)[0m  [1m[34mSELECT `devdb`.`customers`.* FROM `devdb`.`customers`[0m
+  ↳ app/views/employee/index.html.erb:4
+  Rendered employee/index.html.erb within layouts/application (Duration: 19.6ms | Allocations: 2929)
+  Rendered layout layouts/application.html.erb (Duration: 84.8ms | Allocations: 16708)
+Completed 200 OK in 116ms (Views: 88.1ms | ActiveRecord: 10.4ms | Allocations: 18169)
+
+
+Started GET "/customer/101" for 127.0.0.1 at 2023-08-08 15:01:18 +0530
+Processing by EmployeeController#find as HTML
+  Parameters: {"cust_id"=>"101"}
+  [1m[36mCustomer Load (1.0ms)[0m  [1m[34mSELECT `devdb`.`customers`.* FROM `devdb`.`customers` WHERE `devdb`.`customers`.`id` = 101 LIMIT 1[0m
+  ↳ app/controllers/employee_controller.rb:10:in `find'
+Completed 404 Not Found in 18ms (ActiveRecord: 1.0ms | Allocations: 2635)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Customer with 'id'=101):
+  
+app/controllers/employee_controller.rb:10:in `find'
+Started GET "/customer/101" for 127.0.0.1 at 2023-08-08 15:06:26 +0530
+Processing by EmployeeController#find as HTML
+  Parameters: {"cust_id"=>"101"}
+  Rendering layout layouts/application.html.erb
+  Rendering employee/find.html.erb within layouts/application
+  Rendered employee/find.html.erb within layouts/application (Duration: 4.4ms | Allocations: 1050)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | Allocations: 1132)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.7ms | Allocations: 2486)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `customer' for #<ActionView::Base:0x000000000197f8>):
+    2: 
+    3: <ul>
+    4:     <li>
+    5:      Cutomer ID : <%= customer.cust_id %>
+    6:     </li>
+    7:     <li>
+    8:      Cutomer Name : <%= customer.name %>
+  
+app/views/employee/find.html.erb:5
+Started GET "/customer/101" for 127.0.0.1 at 2023-08-08 15:07:18 +0530
+Processing by EmployeeController#find as HTML
+  Parameters: {"cust_id"=>"101"}
+  Rendering layout layouts/application.html.erb
+  Rendering employee/find.html.erb within layouts/application
+  Rendered employee/find.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1089)
+  Rendered layout layouts/application.html.erb (Duration: 2.3ms | Allocations: 1171)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.0ms | Allocations: 2016)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `cust' for #<ActionView::Base:0x00000000019b18>):
+    2: 
+    3: <ul>
+    4:     <li>
+    5:      Cutomer ID : <%= cust.cust_id %>
+    6:     </li>
+    7:     <li>
+    8:      Cutomer Name : <%= cust.name %>
+  
+app/views/employee/find.html.erb:5
+Started GET "/customer/101" for 127.0.0.1 at 2023-08-08 15:07:42 +0530
+Processing by EmployeeController#find as HTML
+  Parameters: {"cust_id"=>"101"}
+  Rendering layout layouts/application.html.erb
+  Rendering employee/find.html.erb within layouts/application
+  [1m[36mCustomer Load (1.9ms)[0m  [1m[34mSELECT `devdb`.`customers`.* FROM `devdb`.`customers` WHERE `devdb`.`customers`.`cust_id` = 101 /* loading for inspect */ LIMIT 11[0m
+  Rendered employee/find.html.erb within layouts/application (Duration: 16.8ms | Allocations: 4107)
+  Rendered layout layouts/application.html.erb (Duration: 23.5ms | Allocations: 4190)
+Completed 500 Internal Server Error in 48ms (ActiveRecord: 1.9ms | Allocations: 5046)
+
+
+  
+ActionView::Template::Error (undefined method `cust_id' for #<ActiveRecord::Relation [#<Customer id: 1, cust_id: 101, name: "vivek", mobile: "1234", email: "vivek@t.com", created_at: "2023-08-08 09:18:14.975078000 +0000", updated_at: "2023-08-08 09:18:14.975078000 +0000">]>):
+    2: 
+    3: <ul>
+    4:     <li>
+    5:      Cutomer ID : <%= @cust.cust_id %>
+    6:     </li>
+    7:     <li>
+    8:      Cutomer Name : <%= @cust.name %>
+  
+app/views/employee/find.html.erb:5
+Started GET "/customer/101" for 127.0.0.1 at 2023-08-08 15:12:42 +0530
+Processing by EmployeeController#find as HTML
+  Parameters: {"cust_id"=>"101"}
+  Rendering layout layouts/application.html.erb
+  Rendering employee/find.html.erb within layouts/application
+  [1m[36mCustomer Load (1.1ms)[0m  [1m[34mSELECT `devdb`.`customers`.* FROM `devdb`.`customers` WHERE `devdb`.`customers`.`cust_id` = 101 /* loading for inspect */ LIMIT 11[0m
+  Rendered employee/find.html.erb within layouts/application (Duration: 11.2ms | Allocations: 2365)
+  Rendered layout layouts/application.html.erb (Duration: 12.3ms | Allocations: 2447)
+Completed 500 Internal Server Error in 43ms (ActiveRecord: 1.1ms | Allocations: 3293)
+
+
+  
+ActionView::Template::Error (undefined method `cust_id' for #<ActiveRecord::Relation [#<Customer id: 1, cust_id: 101, name: "vivek", mobile: "1234", email: "vivek@t.com", created_at: "2023-08-08 09:18:14.975078000 +0000", updated_at: "2023-08-08 09:18:14.975078000 +0000">]>):
+    2: 
+    3: <ul>
+    4:     <li>
+    5:      Cutomer ID : #<%= @cust.cust_id %>
+    6:     </li>
+    7:     <li>
+    8:      Cutomer Name : <%= @cust.name %>
+  
+app/views/employee/find.html.erb:5
+Started GET "/customer/101" for 127.0.0.1 at 2023-08-08 15:13:03 +0530
+Processing by EmployeeController#find as HTML
+  Parameters: {"cust_id"=>"101"}
+  Rendering layout layouts/application.html.erb
+  Rendering employee/find.html.erb within layouts/application
+  Rendered employee/find.html.erb within layouts/application (Duration: 4.9ms | Allocations: 202)
+  Rendered layout layouts/application.html.erb (Duration: 76.9ms | Allocations: 13939)
+Completed 200 OK in 101ms (Views: 93.1ms | ActiveRecord: 0.0ms | Allocations: 14818)
+
+
+Started GET "/customer/101" for 127.0.0.1 at 2023-08-08 15:13:37 +0530
+Processing by EmployeeController#find as HTML
+  Parameters: {"cust_id"=>"101"}
+  Rendering layout layouts/application.html.erb
+  Rendering employee/find.html.erb within layouts/application
+  [1m[36mCustomer Load (1.2ms)[0m  [1m[34mSELECT `devdb`.`customers`.* FROM `devdb`.`customers` WHERE `devdb`.`customers`.`cust_id` = 101 /* loading for inspect */ LIMIT 11[0m
+  Rendered employee/find.html.erb within layouts/application (Duration: 10.1ms | Allocations: 2365)
+  Rendered layout layouts/application.html.erb (Duration: 12.5ms | Allocations: 2447)
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 1.2ms | Allocations: 3293)
+
+
+  
+ActionView::Template::Error (undefined method `custId' for #<ActiveRecord::Relation [#<Customer id: 1, cust_id: 101, name: "vivek", mobile: "1234", email: "vivek@t.com", created_at: "2023-08-08 09:18:14.975078000 +0000", updated_at: "2023-08-08 09:18:14.975078000 +0000">]>):
+    2: 
+    3: <ul>
+    4:     <li>
+    5:      Cutomer ID : <%= @cust.custId %>
+    6:     </li>
+    7:     <li>
+    8:      Cutomer Name : <%= @cust.name %>
+  
+app/views/employee/find.html.erb:5
+Started GET "/customer/101" for 127.0.0.1 at 2023-08-08 15:14:57 +0530
+Processing by EmployeeController#find as HTML
+  Parameters: {"cust_id"=>"101"}
+  Rendering layout layouts/application.html.erb
+  Rendering employee/find.html.erb within layouts/application
+  Rendered employee/find.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1070)
+  Rendered layout layouts/application.html.erb (Duration: 3.3ms | Allocations: 1153)
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 3.5ms | Allocations: 3017)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Employee#find</h1>
+
+<ul>
+    <li>
+     Cutomer ID : <%= @cust.'cust_id' %>
+    </li>
+    <li>
+     Cutomer Name : <%= @cust.name %>
+    </li>
+    
+</ul>
+
+
+<p>Find me in app/views/employee/find.html.erb</p>
+
+):
+1:    <h1>Employee#find</h1>
+2:    
+3:    <ul>
+4:        <li>
+5:         Cutomer ID : <%= @cust.'cust_id' %>
+6:        </li>
+7:        <li>
+8:         Cutomer Name : <%= @cust.name %>
+9:        </li>
+10:        
+11:    </ul>
+12:    
+13:    
+14:    <p>Find me in app/views/employee/find.html.erb</p>
+  
+app/views/employee/find.html.erb:5: syntax error, unexpected string literal
+app/views/employee/find.html.erb:5: syntax error, unexpected string literal
+app/views/employee/find.html.erb:5: syntax error, unexpected string literal
+app/views/employee/find.html.erb:5: syntax error, unexpected string literal
+app/views/employee/find.html.erb:5: syntax error, unexpected string literal
+app/views/employee/find.html.erb:5: syntax error, unexpected string literal
+Started GET "/customer/101" for 127.0.0.1 at 2023-08-08 15:33:06 +0530
+Processing by EmployeeController#find as HTML
+  Parameters: {"cust_id"=>"101"}
+  Rendering layout layouts/application.html.erb
+  Rendering employee/find.html.erb within layouts/application
+  [1m[36mCustomer Load (2.3ms)[0m  [1m[34mSELECT `devdb`.`customers`.* FROM `devdb`.`customers` WHERE `devdb`.`customers`.`cust_id` = 101 /* loading for inspect */ LIMIT 11[0m
+  Rendered employee/find.html.erb within layouts/application (Duration: 35.5ms | Allocations: 4268)
+  Rendered layout layouts/application.html.erb (Duration: 38.9ms | Allocations: 4350)
+Completed 500 Internal Server Error in 77ms (ActiveRecord: 16.5ms | Allocations: 5195)
+
+
+  
+ActionView::Template::Error (undefined method `id' for #<ActiveRecord::Relation [#<Customer id: 1, cust_id: 101, name: "vivek", mobile: "1234", email: "vivek@t.com", created_at: "2023-08-08 09:18:14.975078000 +0000", updated_at: "2023-08-08 09:18:14.975078000 +0000">]>):
+    10:       <th>Email</th>
+    11:   </tr>
+    12:   <tr>
+    13:     <td> <%= @cust.id %> </td>
+    14:     <td> <%= "@cust.cust_id" %> </td>
+    15:     <td> <%= @cust.name %> </td>
+    16:     <td> <%= @cust.mobile %> </td>
+  
+app/views/employee/find.html.erb:13
+Started GET "/customer/101" for 127.0.0.1 at 2023-08-08 15:33:54 +0530
+Processing by EmployeeController#find as HTML
+  Parameters: {"cust_id"=>"101"}
+  Rendering layout layouts/application.html.erb
+  Rendering employee/find.html.erb within layouts/application
+  [1m[36mCustomer Load (1.3ms)[0m  [1m[34mSELECT `devdb`.`customers`.* FROM `devdb`.`customers` WHERE `devdb`.`customers`.`cust_id` = 101 /* loading for inspect */ LIMIT 11[0m
+  Rendered employee/find.html.erb within layouts/application (Duration: 10.8ms | Allocations: 2511)
+  Rendered layout layouts/application.html.erb (Duration: 12.4ms | Allocations: 2593)
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 1.3ms | Allocations: 3439)
+
+
+  
+ActionView::Template::Error (undefined method `mobile' for #<ActiveRecord::Relation [#<Customer id: 1, cust_id: 101, name: "vivek", mobile: "1234", email: "vivek@t.com", created_at: "2023-08-08 09:18:14.975078000 +0000", updated_at: "2023-08-08 09:18:14.975078000 +0000">]>):
+    13:     <td> <%= "@cust.id" %> </td>
+    14:     <td> <%= "@cust.cust_id" %> </td>
+    15:     <td> <%= @cust.name %> </td>
+    16:     <td> <%= @cust.mobile %> </td>
+    17:     <td> <%= @cust.email %> </td>
+    18:   </tr>
+    19: </table>
+  
+app/views/employee/find.html.erb:16
+Started GET "/customer/101" for 127.0.0.1 at 2023-08-08 15:34:52 +0530
+Processing by EmployeeController#find as HTML
+  Parameters: {"cust_id"=>"101"}
+  Rendering layout layouts/application.html.erb
+  Rendering employee/find.html.erb within layouts/application
+  [1m[36mCustomer Load (1.0ms)[0m  [1m[34mSELECT `devdb`.`customers`.* FROM `devdb`.`customers` WHERE `devdb`.`customers`.`cust_id` = 101 /* loading for inspect */ LIMIT 11[0m
+  Rendered employee/find.html.erb within layouts/application (Duration: 9.2ms | Allocations: 2468)
+  Rendered layout layouts/application.html.erb (Duration: 11.5ms | Allocations: 2550)
+Completed 500 Internal Server Error in 43ms (ActiveRecord: 1.0ms | Allocations: 3400)
+
+
+  
+ActionView::Template::Error (undefined method `email' for #<ActiveRecord::Relation [#<Customer id: 1, cust_id: 101, name: "vivek", mobile: "1234", email: "vivek@t.com", created_at: "2023-08-08 09:18:14.975078000 +0000", updated_at: "2023-08-08 09:18:14.975078000 +0000">]>):
+    14:     <td> <%= "@cust.cust_id" %> </td>
+    15:     <td> <%= @cust.name %> </td>
+    16:     <td> <%= "@cust.mobile" %> </td>
+    17:     <td> <%= @cust.email %> </td>
+    18:   </tr>
+    19: </table>
+    20: <ul>
+  
+app/views/employee/find.html.erb:17
+Started GET "/customer/101" for 127.0.0.1 at 2023-08-08 15:35:09 +0530
+Processing by EmployeeController#find as HTML
+  Parameters: {"cust_id"=>"101"}
+  Rendering layout layouts/application.html.erb
+  Rendering employee/find.html.erb within layouts/application
+  [1m[36mCustomer Load (1.2ms)[0m  [1m[34mSELECT `devdb`.`customers`.* FROM `devdb`.`customers` WHERE `devdb`.`customers`.`cust_id` = 101 /* loading for inspect */ LIMIT 11[0m
+  Rendered employee/find.html.erb within layouts/application (Duration: 7.8ms | Allocations: 2468)
+  Rendered layout layouts/application.html.erb (Duration: 11.8ms | Allocations: 2550)
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 1.2ms | Allocations: 3396)
+
+
+  
+ActionView::Template::Error (undefined method `id' for #<ActiveRecord::Relation [#<Customer id: 1, cust_id: 101, name: "vivek", mobile: "1234", email: "vivek@t.com", created_at: "2023-08-08 09:18:14.975078000 +0000", updated_at: "2023-08-08 09:18:14.975078000 +0000">]>):
+    19: </table>
+    20: <ul>
+    21:     <li>
+    22:      Cutomer ID : <%= @cust.id %>
+    23:     </li>
+    24:     <li>
+    25:      Cutomer Name : <%= @cust.name %>
+  
+app/views/employee/find.html.erb:22
+Started GET "/customer/101" for 127.0.0.1 at 2023-08-08 15:35:20 +0530
+Processing by EmployeeController#find as HTML
+  Parameters: {"cust_id"=>"101"}
+  Rendering layout layouts/application.html.erb
+  Rendering employee/find.html.erb within layouts/application
+  Rendered employee/find.html.erb within layouts/application (Duration: 2.0ms | Allocations: 219)
+  Rendered layout layouts/application.html.erb (Duration: 76.7ms | Allocations: 13941)
+Completed 200 OK in 100ms (Views: 92.4ms | ActiveRecord: 0.0ms | Allocations: 14821)
+
+
+Started GET "/customer/101" for 127.0.0.1 at 2023-08-08 15:38:15 +0530
+Processing by EmployeeController#find as HTML
+  Parameters: {"cust_id"=>"101"}
+  Rendering layout layouts/application.html.erb
+  Rendering employee/find.html.erb within layouts/application
+  Rendered employee/find.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1190)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 1272)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 0.0ms | Allocations: 2118)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+     9:       <th>Mobile</th>
+    10:       <th>Email</th>
+    11:   </tr>
+    12:   <% @customers.each do |cust| %>
+    13:     <tr>
+    14:       <td> <%= "@cust.id" %> </td>
+    15:       <td> <%= "@cust.cust_id" %> </td>
+  
+app/views/employee/find.html.erb:12
+Started GET "/customer/101" for 127.0.0.1 at 2023-08-08 15:39:03 +0530
+Processing by EmployeeController#find as HTML
+  Parameters: {"cust_id"=>"101"}
+  Rendering layout layouts/application.html.erb
+  Rendering employee/find.html.erb within layouts/application
+  [1m[36mCustomer Load (1.3ms)[0m  [1m[34mSELECT `devdb`.`customers`.* FROM `devdb`.`customers` WHERE `devdb`.`customers`.`cust_id` = 101[0m
+  ↳ app/views/employee/find.html.erb:12
+  Rendered employee/find.html.erb within layouts/application (Duration: 8.6ms | Allocations: 1821)
+  Rendered layout layouts/application.html.erb (Duration: 11.6ms | Allocations: 1903)
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 1.3ms | Allocations: 2749)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    13:     <tr>
+    14:       <td> <%= "@cust.id" %> </td>
+    15:       <td> <%= "@cust.cust_id" %> </td>
+    16:       <td> <%= @c.name %> </td>
+    17:       <td> <%= "@cust.mobile" %> </td>
+    18:       <td> <%= "@cust.email" %> </td>
+    19:     </tr>
+  
+app/views/employee/find.html.erb:16
+app/views/employee/find.html.erb:12
+Started GET "/customers" for 127.0.0.1 at 2023-08-08 15:41:23 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by EmployeeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering employee/index.html.erb within layouts/application
+  [1m[36mCustomer Load (1.4ms)[0m  [1m[34mSELECT `devdb`.`customers`.* FROM `devdb`.`customers`[0m
+  ↳ app/views/employee/index.html.erb:4
+  Rendered employee/index.html.erb within layouts/application (Duration: 42.0ms | Allocations: 6574)
+  Rendered layout layouts/application.html.erb (Duration: 255.5ms | Allocations: 41590)
+Completed 200 OK in 338ms (Views: 269.2ms | ActiveRecord: 9.4ms | Allocations: 46558)
+
+
+Started GET "/customers" for 127.0.0.1 at 2023-08-08 15:44:44 +0530
+Processing by EmployeeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering employee/index.html.erb within layouts/application
+  [1m[36mCustomer Load (1.0ms)[0m  [1m[34mSELECT `devdb`.`customers`.* FROM `devdb`.`customers`[0m
+  ↳ app/views/employee/index.html.erb:4
+  Rendered employee/index.html.erb within layouts/application (Duration: 5.6ms | Allocations: 929)
+  Rendered layout layouts/application.html.erb (Duration: 25.9ms | Allocations: 3552)
+Completed 200 OK in 49ms (Views: 41.1ms | ActiveRecord: 1.0ms | Allocations: 4390)
+
+
+Started GET "/customers" for 127.0.0.1 at 2023-08-08 15:44:58 +0530
+Processing by EmployeeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering employee/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.8ms)[0m  [1m[34mSELECT `devdb`.`customers`.* FROM `devdb`.`customers`[0m
+  ↳ app/views/employee/index.html.erb:4
+  Rendered employee/index.html.erb within layouts/application (Duration: 5.6ms | Allocations: 949)
+  Rendered layout layouts/application.html.erb (Duration: 32.4ms | Allocations: 3573)
+Completed 200 OK in 60ms (Views: 48.2ms | ActiveRecord: 0.8ms | Allocations: 4412)
+
+
+Started GET "/customers" for 127.0.0.1 at 2023-08-08 15:45:26 +0530
+Processing by EmployeeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering employee/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.8ms)[0m  [1m[34mSELECT `devdb`.`customers`.* FROM `devdb`.`customers`[0m
+  ↳ app/views/employee/index.html.erb:4
+  Rendered employee/index.html.erb within layouts/application (Duration: 8.6ms | Allocations: 998)
+  Rendered layout layouts/application.html.erb (Duration: 44.1ms | Allocations: 3626)
+Completed 200 OK in 75ms (Views: 61.6ms | ActiveRecord: 0.8ms | Allocations: 4458)
+
+
+Started GET "/customers" for 127.0.0.1 at 2023-08-08 15:46:23 +0530
+Processing by EmployeeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering employee/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.9ms)[0m  [1m[34mSELECT `devdb`.`customers`.* FROM `devdb`.`customers`[0m
+  ↳ app/views/employee/index.html.erb:4
+  Rendered employee/index.html.erb within layouts/application (Duration: 5.3ms | Allocations: 997)
+  Rendered layout layouts/application.html.erb (Duration: 23.6ms | Allocations: 3659)
+Completed 200 OK in 48ms (Views: 37.6ms | ActiveRecord: 0.9ms | Allocations: 4497)
+
+
+Started GET "/customer/101" for 127.0.0.1 at 2023-08-08 15:46:29 +0530
+Processing by EmployeeController#find as HTML
+  Parameters: {"cust_id"=>"101"}
+  Rendering layout layouts/application.html.erb
+  Rendering employee/find.html.erb within layouts/application
+  Rendered employee/find.html.erb within layouts/application (Duration: 206.2ms | Allocations: 11663)
+  Rendered layout layouts/application.html.erb (Duration: 208.1ms | Allocations: 11744)
+Completed 500 Internal Server Error in 218ms (ActiveRecord: 0.0ms | Allocations: 12223)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    2: 
+    3: 
+    4: <ul>
+    5:   <% @customers.each do |customer| %>
+    6:     <li>
+    7:       <%= customer.id %>
+    8:       <%= customer.cust_id %>
+  
+app/views/employee/find.html.erb:5
+Started GET "/customer/101" for 127.0.0.1 at 2023-08-08 15:52:37 +0530
+Processing by EmployeeController#find as HTML
+  Parameters: {"cust_id"=>"101"}
+  Rendering layout layouts/application.html.erb
+  Rendering employee/find.html.erb within layouts/application
+  Rendered employee/find.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1099)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | Allocations: 1182)
+Completed 500 Internal Server Error in 45ms (ActiveRecord: 1.2ms | Allocations: 2856)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `customer' for #<ActionView::Base:0x0000000000e808>):
+    3: 
+    4: <ul>
+    5:     <li>
+    6:       <%= customer.id %>
+    7:       <%= customer.cust_id %>
+    8:       <%= customer.name %>
+    9:       <%= customer.mobile %>
+  
+app/views/employee/find.html.erb:6
+Started GET "/customer/101" for 127.0.0.1 at 2023-08-08 15:59:23 +0530
+Processing by EmployeeController#find as HTML
+  Parameters: {"cust_id"=>"101"}
+  Rendering layout layouts/application.html.erb
+  Rendering employee/find.html.erb within layouts/application
+  Rendered employee/find.html.erb within layouts/application (Duration: 0.7ms | Allocations: 890)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | Allocations: 972)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 1.4ms | Allocations: 2278)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `customer' for #<ActionView::Base:0x00000000012408>):
+    3: 
+    4: <ul>
+    5:     <li>
+    6:       <%= customer.id %>
+    7:       <%= customer.cust_id %>
+    8:       <%= customer.name %>
+    9:       <%= customer.mobile %>
+  
+app/views/employee/find.html.erb:6
+Started GET "/customers" for 127.0.0.1 at 2023-08-08 16:02:50 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by EmployeeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering employee/index.html.erb within layouts/application
+  [1m[36mCustomer Load (1.5ms)[0m  [1m[34mSELECT `devdb`.`customers`.* FROM `devdb`.`customers`[0m
+  ↳ app/views/employee/index.html.erb:4
+  Rendered employee/index.html.erb within layouts/application (Duration: 52.1ms | Allocations: 6685)
+  Rendered layout layouts/application.html.erb (Duration: 263.1ms | Allocations: 41673)
+Completed 200 OK in 370ms (Views: 283.1ms | ActiveRecord: 12.4ms | Allocations: 46641)
+
+
+Started GET "/customer/101" for 127.0.0.1 at 2023-08-08 16:02:57 +0530
+Processing by EmployeeController#find as HTML
+  Parameters: {"cust_id"=>"101"}
+  Rendering layout layouts/application.html.erb
+  Rendering employee/find.html.erb within layouts/application
+  Rendered employee/find.html.erb within layouts/application (Duration: 5.7ms | Allocations: 1523)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | Allocations: 1605)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.0ms | Allocations: 2103)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `customer' for #<ActionView::Base:0x0000000000a8c0>):
+    3: 
+    4: <ul>
+    5:     <li>
+    6:       <%= customer.id %>
+    7:       <%= customer.cust_id %>
+    8:       <%= customer.name %>
+    9:       <%= customer.mobile %>
+  
+app/views/employee/find.html.erb:6
+Started GET "/customer/101" for 127.0.0.1 at 2023-08-08 16:03:34 +0530
+Processing by EmployeeController#find as HTML
+  Parameters: {"cust_id"=>"101"}
+  Rendering layout layouts/application.html.erb
+  Rendering employee/find.html.erb within layouts/application
+  [1m[36mCustomer Load (1.0ms)[0m  [1m[34mSELECT id, cust_id, name, mobile, email FROM `devdb`.`customers` WHERE `devdb`.`customers`.`cust_id` = 101 /* loading for inspect */ LIMIT 11[0m
+  Rendered employee/find.html.erb within layouts/application (Duration: 243.1ms | Allocations: 15761)
+  Rendered layout layouts/application.html.erb (Duration: 245.2ms | Allocations: 15844)
+Completed 500 Internal Server Error in 268ms (ActiveRecord: 1.0ms | Allocations: 16704)
+
+
+  
+ActionView::Template::Error (undefined method `id' for #<ActiveRecord::Relation [#<Customer id: 1, cust_id: 101, name: "vivek", mobile: "1234", email: "vivek@t.com">]>):
+    3: 
+    4: <ul>
+    5:     <li>
+    6:       <%= @customer.id %>
+    7:       <%= @customer.cust_id %>
+    8:       <%= @customer.name %>
+    9:       <%= @customer.mobile %>
+  
+app/views/employee/find.html.erb:6
+Started GET "/customer/101" for 127.0.0.1 at 2023-08-08 16:04:54 +0530
+Processing by EmployeeController#find as HTML
+  Parameters: {"cust_id"=>"101"}
+  Rendering layout layouts/application.html.erb
+  Rendering employee/find.html.erb within layouts/application
+  [1m[36mCustomer Load (21.2ms)[0m  [1m[34mSELECT id, cust_id, name, mobile, email FROM `devdb`.`customers` WHERE (cust_id = '101') /* loading for inspect */ LIMIT 11[0m
+  Rendered employee/find.html.erb within layouts/application (Duration: 38.7ms | Allocations: 4183)
+  Rendered layout layouts/application.html.erb (Duration: 40.6ms | Allocations: 4266)
+Completed 500 Internal Server Error in 55ms (ActiveRecord: 30.5ms | Allocations: 5381)
+
+
+  
+ActionView::Template::Error (undefined method `id' for #<ActiveRecord::Relation [#<Customer id: 1, cust_id: 101, name: "vivek", mobile: "1234", email: "vivek@t.com">]>):
+    3: 
+    4: <ul>
+    5:     <li>
+    6:       <%= @customer.id %>
+    7:       <%= @customer.cust_id %>
+    8:       <%= @customer.name %>
+    9:       <%= @customer.mobile %>
+  
+app/views/employee/find.html.erb:6
+Started GET "/customer/101" for 127.0.0.1 at 2023-08-08 16:12:11 +0530
+Processing by EmployeeController#find as HTML
+  Parameters: {"cust_id"=>"101"}
+  Rendering layout layouts/application.html.erb
+  Rendering employee/find.html.erb within layouts/application
+  Rendered employee/find.html.erb within layouts/application (Duration: 2.1ms | Allocations: 205)
+  Rendered layout layouts/application.html.erb (Duration: 64.8ms | Allocations: 13996)
+Completed 200 OK in 97ms (Views: 78.9ms | ActiveRecord: 0.9ms | Allocations: 15611)
+
+
+Started GET "/customer/101" for 127.0.0.1 at 2023-08-08 16:15:27 +0530
+Processing by EmployeeController#find as HTML
+  Parameters: {"cust_id"=>"101"}
+  Rendering layout layouts/application.html.erb
+  Rendering employee/find.html.erb within layouts/application
+  Rendered employee/find.html.erb within layouts/application (Duration: 0.2ms | Allocations: 15)
+  Rendered layout layouts/application.html.erb (Duration: 63.2ms | Allocations: 13600)
+Completed 200 OK in 79ms (Views: 66.5ms | ActiveRecord: 0.0ms | Allocations: 14776)
+
+
+Started GET "/customer/101" for 127.0.0.1 at 2023-08-08 16:15:58 +0530
+Processing by EmployeeController#find as HTML
+  Parameters: {"cust_id"=>"101"}
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms | Allocations: 1019)
+
+
+  
+NameError (undefined local variable or method `customer' for #<EmployeeController:0x000000000197a8>):
+  
+app/controllers/employee_controller.rb:13:in `find'
+Started GET "/customer/101" for 127.0.0.1 at 2023-08-08 16:16:35 +0530
+Processing by EmployeeController#find as HTML
+  Parameters: {"cust_id"=>"101"}
+  [1m[36mCustomer Load (1.3ms)[0m  [1m[34mSELECT id, cust_id, name, mobile, email FROM `devdb`.`customers` WHERE (cust_id = '101')[0m
+  ↳ app/controllers/employee_controller.rb:13:in `puts'
+  Rendering layout layouts/application.html.erb
+  Rendering employee/find.html.erb within layouts/application
+  Rendered employee/find.html.erb within layouts/application (Duration: 0.2ms | Allocations: 15)
+  Rendered layout layouts/application.html.erb (Duration: 65.3ms | Allocations: 13605)
+Completed 200 OK in 104ms (Views: 68.5ms | ActiveRecord: 14.6ms | Allocations: 17359)
+
+
+Started GET "/customer/101" for 127.0.0.1 at 2023-08-08 16:18:36 +0530
+Processing by EmployeeController#find as HTML
+  Parameters: {"cust_id"=>"101"}
+  [1m[36mCustomer Load (0.9ms)[0m  [1m[34mSELECT id, cust_id, name, mobile, email FROM `devdb`.`customers` WHERE (cust_id = '101')[0m
+  ↳ app/controllers/employee_controller.rb:13:in `puts'
+  Rendering layout layouts/application.html.erb
+  Rendering employee/find.html.erb within layouts/application
+  Rendered employee/find.html.erb within layouts/application (Duration: 0.1ms | Allocations: 15)
+  Rendered layout layouts/application.html.erb (Duration: 65.0ms | Allocations: 13627)
+Completed 200 OK in 100ms (Views: 67.5ms | ActiveRecord: 10.8ms | Allocations: 17381)
+
+
+Started GET "/customer/101" for 127.0.0.1 at 2023-08-08 16:19:17 +0530
+Processing by EmployeeController#find as HTML
+  Parameters: {"cust_id"=>"101"}
+  [1m[36mCustomer Load (0.8ms)[0m  [1m[34mSELECT id, cust_id, name, mobile, email FROM `devdb`.`customers` WHERE (cust_id = '101')[0m
+  ↳ app/controllers/employee_controller.rb:13:in `puts'
+  Rendering layout layouts/application.html.erb
+  Rendering employee/find.html.erb within layouts/application
+  Rendered employee/find.html.erb within layouts/application (Duration: 5.3ms | Allocations: 1188)
+  Rendered layout layouts/application.html.erb (Duration: 8.6ms | Allocations: 1270)
+Completed 500 Internal Server Error in 52ms (ActiveRecord: 0.8ms | Allocations: 2686)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    2: 
+    3: 
+    4: <ul>
+    5:   <% @customers.each do |customer| %>
+    6:     <li>
+    7:       <%= customer.id %>
+    8:       <%= customer.cust_id %>
+  
+app/views/employee/find.html.erb:5
+Started GET "/customer/101" for 127.0.0.1 at 2023-08-08 16:19:47 +0530
+Processing by EmployeeController#find as HTML
+  Parameters: {"cust_id"=>"101"}
+  [1m[36mCustomer Load (0.8ms)[0m  [1m[34mSELECT id, cust_id, name, mobile, email FROM `devdb`.`customers` WHERE (cust_id = '101')[0m
+  ↳ app/controllers/employee_controller.rb:13:in `puts'
+  Rendering layout layouts/application.html.erb
+  Rendering employee/find.html.erb within layouts/application
+  Rendered employee/find.html.erb within layouts/application (Duration: 0.2ms | Allocations: 28)
+  Rendered layout layouts/application.html.erb (Duration: 66.7ms | Allocations: 13835)
+Completed 200 OK in 101ms (Views: 69.8ms | ActiveRecord: 9.9ms | Allocations: 17588)
+
+
+Started GET "/customer/101" for 127.0.0.1 at 2023-08-08 16:21:13 +0530
+Processing by EmployeeController#find as HTML
+  Parameters: {"cust_id"=>"101"}
+  [1m[36mCustomer Load (1.3ms)[0m  [1m[34mSELECT id, cust_id, name, mobile, email FROM `devdb`.`customers` WHERE (cust_id = '101')[0m
+  ↳ app/controllers/employee_controller.rb:18:in `puts'
+  Rendering layout layouts/application.html.erb
+  Rendering employee/find.html.erb within layouts/application
+  Rendered employee/find.html.erb within layouts/application (Duration: 2.2ms | Allocations: 273)
+  Rendered layout layouts/application.html.erb (Duration: 91.6ms | Allocations: 14060)
+Completed 200 OK in 138ms (Views: 105.3ms | ActiveRecord: 9.5ms | Allocations: 18127)
+
+
+Started GET "/customers" for 127.0.0.1 at 2023-08-08 16:21:22 +0530
+Processing by EmployeeController#index as HTML
+  [1m[36mCustomer Load (0.7ms)[0m  [1m[34mSELECT `devdb`.`customers`.* FROM `devdb`.`customers`[0m
+  ↳ app/controllers/employee_controller.rb:8:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering employee/index.html.erb within layouts/application
+  Rendered employee/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 284)
+  Rendered layout layouts/application.html.erb (Duration: 26.1ms | Allocations: 2622)
+Completed 200 OK in 41ms (Views: 27.5ms | ActiveRecord: 0.7ms | Allocations: 3636)
+
+
